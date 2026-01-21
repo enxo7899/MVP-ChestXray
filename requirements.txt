@@ -1,0 +1,8 @@
+Flask==3.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+torchxrayvision>=1.2.0
+numpy<2.0.0,>=1.24.0
+scikit-image>=0.21.0
+pillow>=10.0.0
+gunicorn==21.2.0

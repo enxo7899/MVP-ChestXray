@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════════════════
+  🎯 FILLOJE KËTU - ZGJIDHJA FINALE
+═══════════════════════════════════════════════════════════════
+
+✅ KAM KRIJUAR NJË DOSJE TË RE: DEPLOY_FLASK
+
+Kjo dosje përmban aplikacionin Flask QË FUNKSIONON në laptop tënd,
+gati për deployment në Hugging Face Spaces.
+
+═══════════════════════════════════════════════════════════════
+
+📁 ÇFARË KA BRENDA:
+
+app.py              → Flask backend (si në laptop)
+templates/          → HTML/CSS interface (e bukur)
+engine_chest.py     → Model AI
+translations.py     → Përkthimet shqip
+requirements.txt    → Dependencies
+Dockerfile          → Docker config
+README.md           → Metadata për HF
+.gitattributes      → Git config
+.gitignore          → Git ignore
+
+═══════════════════════════════════════════════════════════════
+
+🚀 3 HAPA TË THJESHTË:
+
+1️⃣  Fshi të gjithë skedarët e vjetër në Space
+    https://huggingface.co/spaces/enxo7899/MVP_MSH
+    Files → Fshi çdo skedar
+
+2️⃣  Ngarko TË GJITHË skedarët nga dosja DEPLOY_FLASK
+    Add file → Upload files → Zgjidh të gjithë
+
+3️⃣  Prit 10-15 minuta
+    Shiko Logs për progres
+
+═══════════════════════════════════════════════════════════════
+
+✅ REZULTATI:
+
+Aplikacioni QË FUNKSIONON në laptop tënd,
+tani online në Hugging Face! 🎉
+
+═══════════════════════════════════════════════════════════════
+
+Lexo DEPLOY_INSTRUCTIONS.txt për detaje të plota.

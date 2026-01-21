@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════════
+  🔧 RREGULLIMI I SHPEJTË - "Missing app file"
+═══════════════════════════════════════════════════════════════
+
+GABIMI: "This Space is missing an app file"
+
+SHKAKU: README.md nuk kishte app_port për Docker SDK
+
+ZGJIDHJA: Kam përditësuar README.md
+
+═══════════════════════════════════════════════════════════════
+
+✅ BËJE KËTË TANI:
+
+HAPI 1: Fshi README.md e vjetër në Space
+─────────────────────────────────────────
+
+1. Shko te Files në Space
+2. Gjej "README.md"
+3. Kliko "..." → "Delete"
+4. Konfirmo
+
+
+HAPI 2: Ngarko README.md e ri
+──────────────────────────────
+
+1. Kliko "Add file" → "Upload files"
+2. Zgjidh "README.md" nga dosja DEPLOY_FLASK
+3. Kliko "Commit changes to main"
+
+
+HAPI 3: Prit 2 minuta
+──────────────────────
+
+Space-i do të rifillojë automatikisht.
+
+═══════════════════════════════════════════════════════════════
+
+✅ KONTROLLO:
+
+Pas ngarkimit, hap README.md në Space dhe duhet të shohësh:
+
+---
+title: Klasifikuesi i Patologjive të Radiografisë së Gjoksit
+emoji: 🫁
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860          ← KY ËSHTË I RI!
+pinned: false
+license: mit
+---
+
+═══════════════════════════════════════════════════════════════
+
+Bëje dhe më thuaj nëse funksionon! 🚀
