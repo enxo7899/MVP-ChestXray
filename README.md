@@ -1,5 +1,5 @@
 ---
-title: Klasifikuesi i Patologjive të Radiografisë së Gjoksit
+title: Chest X-ray Pathology Classifier
 emoji: 🫁
 colorFrom: blue
 colorTo: indigo
@@ -9,32 +9,44 @@ pinned: false
 license: mit
 ---
 
-# 🫁 Klasifikuesi i Patologjive të Radiografisë së Gjoksit
+# Chest X-ray Pathology Classifier
 
-## Ministria e Shëndetësisë - Republika e Shqipërisë 🇦🇱
+Proposal-stage prototype built for Albania's Ministry of Health: upload a chest X-ray and get likelihood scores for 18 pathologies in about 2–3 seconds, with an Albanian clinician-facing interface.
 
-Sistem AI për analizën e radiografive të gjoksit dhe zbulimin e patologjive.
+**Live demo:** https://huggingface.co/spaces/enxo7899/MVP_MSH
+
+> **Medical disclaimer:** research and educational prototype. Results are suggestions, not diagnoses. Every case must be reviewed by a qualified radiologist; do not use for clinical decisions without medical supervision.
+
+## How it works
+
+- **Model:** DenseNet-121 from [TorchXRayVision](https://github.com/mlmed/torchxrayvision) (`densenet121-res224-all`), pretrained on multiple public chest X-ray datasets.
+- **Findings:** 18 pathologies, e.g. pneumonia, cardiomegaly, pleural effusion.
+- **Serving:** Flask app (`app.py`) with a `/predict` endpoint; inference in `engine_chest.py`; Albanian labels in `translations.py`.
+- **Deployment:** Docker image on Hugging Face Spaces (port 7860).
+
+## Run locally
+
+```bash
+docker build -t chest-xray .
+docker run -p 7860:7860 chest-xray   # then open http://localhost:7860
+```
+
+or
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+## Project structure
+
+```
+app.py            # Flask server: UI and /predict endpoint
+engine_chest.py   # DenseNet-121 inference
+translations.py   # Albanian pathology names
+templates/        # clinician-facing UI
+Dockerfile
+```
 
 ---
-
-## 🎯 Karakteristikat
-
-- **18 Patologji të Zbulueshme:** Pneumoni, Kardiomegali, Efuzion Pleural, etj.
-- **Gjuhë Shqipe:** Ndërfaqe dhe rezultate në shqip
-- **Model AI i Avancuar:** DenseNet-121 (densenet121-res224-all)
-- **Analiza e Shpejtë:** 2-3 sekonda për radiografi
-- **Ndërfaqe Profesionale:** Dizajn i përshtatur për mjekë
-
----
-
-## ⚠️ Paralajmërim i Rëndësishëm
-
-**Ky është një sistem prototipi për qëllime kërkimore dhe edukative.**
-
-- Rezultatet janë **sugjerime**, jo diagnoza përfundimtare
-- Çdo rast duhet **vlerësuar nga një radiolog i kualifikuar**
-- **NUK duhet përdorur** për vendime klinike pa mbikëqyrje mjekësore
-
----
-
-**Zhvilluar për Ministrinë e Shëndetësisë - Republika e Shqipërisë** 🇦🇱
+*Shqip:* Klasifikues prototip i patologjive në radiografitë e gjoksit, i zhvilluar për Ministrinë e Shëndetësisë. Rezultatet janë sugjerime dhe duhet të vlerësohen nga një radiolog i kualifikuar.
